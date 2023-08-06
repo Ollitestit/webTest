@@ -18,6 +18,7 @@ public class ApplicationDebitCardTest {
         $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
         Thread.sleep(5000);
     }
+
     @Test
     void shouldTestValidValuesNameWithDash() throws InterruptedException {
         open("http://localhost:7777");
@@ -29,6 +30,7 @@ public class ApplicationDebitCardTest {
         $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
         Thread.sleep(5000);
     }
+
     @Test
     void shouldTestInvalidName() throws InterruptedException {
         open("http://localhost:7777");
@@ -38,6 +40,7 @@ public class ApplicationDebitCardTest {
         $("[data-test-id=name].input_invalid .input__sub").shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
         Thread.sleep(5000);
     }
+
     @Test
     void shouldTestInvalidPhone() throws InterruptedException {
         open("http://localhost:7777");
@@ -48,6 +51,7 @@ public class ApplicationDebitCardTest {
         $("[data-test-id=phone].input_invalid .input__sub").shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
         Thread.sleep(5000);
     }
+
     @Test
     void shouldTestSendBlankFieldName() throws InterruptedException {
         open("http://localhost:7777");
@@ -57,6 +61,7 @@ public class ApplicationDebitCardTest {
         $("[data-test-id=name].input_invalid .input__sub").shouldHave(exactText("Поле обязательно для заполнения"));
         Thread.sleep(5000);
     }
+
     @Test
     void shouldTestSendBlankFieldPhone() throws InterruptedException {
         open("http://localhost:7777");
